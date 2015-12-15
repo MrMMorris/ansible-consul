@@ -11,7 +11,7 @@
   "domain": "{{ consul_domain }}",
   "data_dir": "{{ consul_data_dir }}",
 {% if consul_dns_config is defined %}
-  "dns_config": 
+  "dns_config": {
     "allow_stale": {{ "true" if consul_dns_allow_stale else "false" }},
     "max_stale": {{ consul_dns_max_stale }},
     "node_ttl": {{ consul_dns_node_ttl }},
