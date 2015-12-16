@@ -18,8 +18,8 @@
     "service_ttl": {
       "*": "{{ consul_dns_service_ttl }}"
     },
-    "enable_truncate": {{ consul_dns_enable_truncate }},
-    "only_passing": {{ consul_dns_only_passing }}
+    "enable_truncate": {{ "true" if consul_dns_enable_truncate else "false" }},
+    "only_passing": {{ "true" if consul_dns_only_passing else "false" }}
   },
 {% endif %}
   "log_level": "{{ consul_log_level }}",
